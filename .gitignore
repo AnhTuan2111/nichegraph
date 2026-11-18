@@ -1,0 +1,7 @@
+# Reference clones studied for design
+.tmp/
+
+# Secrets and account sessions never enter the repository
+.env
+*.cookies
+browser-profile/
