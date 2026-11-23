@@ -50,9 +50,23 @@ implementation starts, and may change if research shows it is wrong.
 - **Video sources, in tiers.** The first version reads a video's description, comments and existing captions.
   Speech to text and text on screen come later as options, because they need `ffmpeg` and Whisper installed.
 
+Agreed on 23 November 2026, changing the shape above:
+
+- **A web app on top of the CLI and the skill.** The question is typed in the web app. The core stays a CLI, tools and
+  a skill: tools do the fixed work (driving the browser, fetching posts, filtering comments) without a model, and a
+  model only groups and analyses what was fetched. The model is reached through an agent, an API key or the
+  subscription already logged in on the machine (owner, 2026-11-23).
+- **One topic, one growing graph.** Each topic has its own graph. Later research on the same topic adds to it, or
+  edits and removes from it, instead of starting over (owner, 2026-11-23).
+- **The look of bl00d.money.** Results are shown as a graph in the style of [bl00d.money](https://bl00d.money)
+  ([research](research/2026-11-23-graph-ui-references.md)) (owner, 2026-11-23).
+- **Sources in order:** Reddit first, then Facebook; video platforms (TikTok, YouTube) after those (owner, 2026-11-23).
+
 ## Open questions
 
 Each is decided with the owner, one at a time, and recorded in an issue.
 
-1. Which source comes first.
-2. Which Go library drives the browser.
+1. Whether the graph is drawn in 2D or 3D, and with which library
+   ([research](research/2026-11-23-graph-ui-references.md)).
+2. Which Go library drives the browser, and whether Reddit needs a browser at all.
+3. The words used for the parts of the system (topic, run, post, entity, claim), written down as a glossary.
