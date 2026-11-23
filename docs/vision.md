@@ -61,12 +61,15 @@ Agreed on 23 November 2026, changing the shape above:
 - **The look of bl00d.money.** Results are shown as a graph in the style of [bl00d.money](https://bl00d.money)
   ([research](research/2026-11-23-graph-ui-references.md)) (owner, 2026-11-23).
 - **Sources in order:** Reddit first, then Facebook; video platforms (TikTok, YouTube) after those (owner, 2026-11-23).
+- **A 3D graph drawn with [3d-force-graph](https://github.com/vasturiano/3d-force-graph).** Chosen over 2D by the
+  owner; the library's `graphData()` adds nodes to a running graph, which fits a topic that grows
+  ([research](research/2026-11-23-graph-ui-references.md)) (owner, 2026-11-23).
+- **Interface drafts in Figma, through [Figwright](https://github.com/awdr74100/figwright).** Motion and the 3D graph,
+  which Figma cannot show, are drafted as HTML instead (owner, 2026-11-23).
 
 ## Open questions
 
 Each is decided with the owner, one at a time, and recorded in an issue.
 
-1. Whether the graph is drawn in 2D or 3D, and with which library
-   ([research](research/2026-11-23-graph-ui-references.md)).
-2. Which Go library drives the browser, and whether Reddit needs a browser at all.
-3. The words used for the parts of the system (topic, run, post, entity, claim), written down as a glossary.
+1. Which Go library drives the browser, and whether Reddit needs a browser at all.
+2. The words used for the parts of the system (topic, run, post, entity, claim), written down as a glossary.
