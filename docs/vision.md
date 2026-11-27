@@ -63,6 +63,14 @@ Agreed on 23 November 2026, changing the shape above:
   (owner, 2026-11-27).
 - **One graph, no view switcher.** Clicking a node flies the camera to it, as in 3d-force-graph's `click-to-focus`
   example; grouping by type is done with the filters beside the graph (owner, 2026-11-27).
+- **Icons follow the topic.** Entity types differ from topic to topic, as GraphRAG's `entity_types` setting does
+  (default `organization`, `person`, `geo`, `event`). Claims, claims backed only by advertising, and places keep fixed
+  icons: a speech bubble, a megaphone and a map pin. Every other type gets an icon when the model creates it: the model
+  picks a name from [Phosphor](https://github.com/phosphor-icons/core) (MIT, an icon library shadcn/ui supports), and a
+  type whose name is not in Phosphor falls back to a grey hexagon. Every icon, fixed or picked, is Phosphor's `fill`
+  weight, so each type is a solid silhouette of its own; Lucide was tried first and dropped because its icons are
+  outlines only (owner, 2026-11-27). About five colours go to the most common types; the rest share grey and are told
+  apart by their icon (owner, 2026-11-27).
 - **Vietnamese interface first, English later.** Every label is in Vietnamese, with a button to switch language once the
   English version exists (owner, 2026-11-27).
 - **Red, white, blue and black,** after the colours of Spider-Man: Across the Spider-Verse (owner, 2026-11-27). Components
