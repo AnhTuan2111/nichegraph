@@ -58,8 +58,15 @@ Agreed on 23 November 2026, changing the shape above:
   subscription already logged in on the machine (owner, 2026-11-23).
 - **One topic, one growing graph.** Each topic has its own graph. Later research on the same topic adds to it, or
   edits and removes from it, instead of starting over (owner, 2026-11-23).
-- **The look of bl00d.money.** Results are shown as a graph in the style of [bl00d.money](https://bl00d.money)
-  ([research](research/2026-11-23-graph-ui-references.md)) (owner, 2026-11-23).
+- **The graph follows [3d-force-graph](https://github.com/vasturiano/3d-force-graph) alone.** bl00d.money was the first
+  reference for showing results as a graph (owner, 2026-11-23); it is no longer a reference for colours or components
+  (owner, 2026-11-27).
+- **One graph, no view switcher.** Clicking a node flies the camera to it, as in 3d-force-graph's `click-to-focus`
+  example; grouping by type is done with the filters beside the graph (owner, 2026-11-27).
+- **Vietnamese interface first, English later.** Every label is in Vietnamese, with a button to switch language once the
+  English version exists (owner, 2026-11-27).
+- **Red, white, blue and black,** after the colours of Spider-Man: Across the Spider-Verse (owner, 2026-11-27). Components
+  and tokens are learned from shadcn/ui and the kits in [the UI kits research](research/2026-11-27-ui-kits.md).
 - **Sources in order:** Reddit first, then Facebook; video platforms (TikTok, YouTube) after those (owner, 2026-11-23).
 - **A 3D graph drawn with [3d-force-graph](https://github.com/vasturiano/3d-force-graph).** Chosen over 2D by the
   owner; the library's `graphData()` adds nodes to a running graph, which fits a topic that grows
