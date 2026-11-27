@@ -66,10 +66,10 @@ Agreed on 23 November 2026, changing the shape above:
   ([research](research/2026-11-23-graph-ui-references.md)) (owner, 2026-11-23).
 - **Interface drafts in Figma, through [Figwright](https://github.com/awdr74100/figwright).** Motion and the 3D graph,
   which Figma cannot show, are drafted as HTML instead (owner, 2026-11-23).
+- **The words for the parts of the system** are in the [glossary](glossary.md) (owner, 2026-11-27).
 
 ## Open questions
 
 Each is decided with the owner, one at a time, and recorded in an issue.
 
 1. Which Go library drives the browser, and whether Reddit needs a browser at all.
-2. The words used for the parts of the system (topic, run, post, entity, claim), written down as a glossary.
