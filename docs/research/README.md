@@ -8,3 +8,5 @@ stays as written once dated; newer findings go in a newer note.
 | 2026-11-18 | [Existing tools and the first search by hand](2026-11-18-existing-tools.md) |
 | 2026-11-23 | [Graph interface references: bl00d.money, graph libraries, sci-fi UI kits](2026-11-23-graph-ui-references.md) |
 | 2026-11-27 | [UI kits and design tools](2026-11-27-ui-kits.md) |
+| 2026-11-28 | [Reading Reddit](2026-11-28-reddit-access.md) |
+| 2026-11-28 | [Keeping data on the user's machine and sharing it](2026-11-28-local-first-sharing.md) |

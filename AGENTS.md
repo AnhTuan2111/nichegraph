@@ -42,6 +42,12 @@
   component gets its design approved in the issue before code. Branch `<issue>-<slug>`, commit subjects
   `type(scope): summary (#<issue>)`, one pull request per issue, merged with a merge commit (not squashed) once CI is
   green and the owner has approved it.
+- Issue titles are `type(scope): summary`; a pull request takes its issue's title with ` (#<issue>)` added, as
+  hypomnema's pull requests do (owner, 2026-11-28). `type` is one of `feat`, `fix`, `docs`, `chore`, `refactor`,
+  `test`, `ci`; `scope` is the part touched (`run`, `source`, `runtime`, `store`, `web`, `skill`, `ci`, later `hub`)
+  and is left out when a change touches several; `summary` is English, starts in lower case, says what the change
+  makes, and stays within 72 characters. A design that spans several pull requests is one issue, and each pull
+  request has its own issue marked "Part of #<design issue>".
 - Docs-only changes (`docs/`, `AGENTS.md`, `README.md`) go straight to `main` with the subject `docs: summary`, after
   the owner has read them.
 - Commits carry the owner's name only: no co-author or "generated with" lines.

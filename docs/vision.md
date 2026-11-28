@@ -26,8 +26,10 @@ Once searching works well, the collected posts may also be shown as a graph: who
 
 ## Principles
 
-- Vietnamese sources and Vietnamese questions first; no tool found so far covers them
-  ([research](research/2026-11-18-existing-tools.md)).
+- Vietnamese questions first; no tool found so far covers them
+  ([research](research/2026-11-18-existing-tools.md)). The language of the sources follows the question: a question
+  about something only Vietnamese people discuss is searched in Vietnamese, any other question in every language that
+  has useful posts, English included (owner, 2026-11-28).
 - Free and open source. It runs on the user's own machine with the user's own accounts and keys; there is no hosted
   service to pay for.
 - Every claim in an answer links to its post.
@@ -76,6 +78,10 @@ Agreed on 23 November 2026, changing the shape above:
 - **Red, white, blue and black,** after the colours of Spider-Man: Across the Spider-Verse (owner, 2026-11-27). Components
   and tokens are learned from shadcn/ui and the kits in [the UI kits research](research/2026-11-27-ui-kits.md).
 - **Sources in order:** Reddit first, then Facebook; video platforms (TikTok, YouTube) after those (owner, 2026-11-23).
+- **Reddit is read through [Arctic Shift](https://github.com/ArthurHeitmann/arctic_shift) for the first version.** The
+  Data API takes no new requests and a logged-in browser breaks Reddit's User Agreement
+  ([research](research/2026-11-28-reddit-access.md)); Arctic Shift needs no account. The whole path from question to
+  graph is built on it first, and the other sources wait (owner, 2026-11-28).
 - **A 3D graph drawn with [3d-force-graph](https://github.com/vasturiano/3d-force-graph).** Chosen over 2D by the
   owner; the library's `graphData()` adds nodes to a running graph, which fits a topic that grows
   ([research](research/2026-11-23-graph-ui-references.md)) (owner, 2026-11-23).
@@ -83,8 +89,29 @@ Agreed on 23 November 2026, changing the shape above:
   which Figma cannot show, are drafted as HTML instead (owner, 2026-11-23).
 - **The words for the parts of the system** are in the [glossary](glossary.md) (owner, 2026-11-27).
 
+Agreed on 28 November 2026, adding to the shape above:
+
+- **Everyone signs in, data stays on each person's machine.** Anyone can sign in, research their own topics, share a
+  topic with others and add friends to see their topics. Fetched posts and graphs are kept on the person's own
+  machine, as Zalo keeps messages on the device, so that hosting costs little; a hosted server keeps only accounts,
+  their sign-in data and what is needed to share. The core stays open source, so anyone can run all of it on their
+  own machine or server and keep their own data (owner, 2026-11-28).
+- **A shared topic is an encrypted snapshot,** as Excalidraw's share links are (`exportToBackend`,
+  `excalidraw-app/data/index.ts`): the person's machine encrypts the topic's graph and uploads it, the hosted server
+  keeps bytes it cannot read, and the key travels in the link's `#` part, which browsers never send to a server. A
+  friend sees the last snapshot even while the owner's machine is off, so a new snapshot goes up after each Run
+  ([research](research/2026-11-28-local-first-sharing.md)) (owner, 2026-11-28).
+- **Go drives a Run.** The program runs the steps in order (plan, fetch, flag advertising, extract the graph, merge
+  it) and calls the model only to plan and to extract, each call taking text and returning JSON, as GraphRAG's indexing
+  pipeline calls its model. An agent does not choose the steps (owner, 2026-11-28).
+- **The model is reached as before** through the Runtime; a self-hosted model may replace it later, since NicheGraph
+  only summarises and analyses, with no question answering (owner, 2026-11-28).
+
 ## Open questions
 
 Each is decided with the owner, one at a time, and recorded in an issue.
 
-1. Which Go library drives the browser, and whether Reddit needs a browser at all.
+1. Which Go library drives the browser, once a source needs one; Reddit does not
+   ([research](research/2026-11-28-reddit-access.md)).
+2. How a topic is shared with a friend without sending a link: each account would need a key pair so that a topic's
+   key can be encrypted for each friend (any-sync's access lists do this; not yet read in code).
