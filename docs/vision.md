@@ -104,6 +104,10 @@ Agreed on 28 November 2026, adding to the shape above:
 - **Go drives a Run.** The program runs the steps in order (plan, fetch, flag advertising, extract the graph, merge
   it) and calls the model only to plan and to extract, each call taking text and returning JSON, as GraphRAG's indexing
   pipeline calls its model. An agent does not choose the steps (owner, 2026-11-28).
+- **Three Runtimes:** Claude Code (`claude -p`) and Codex (`codex exec`) on the person's subscription, and Gemini
+  through a Google AI Studio API key. Gemini is not reached through the Antigravity CLI, because Antigravity's
+  [FAQ](https://antigravity.google/docs/faq/) does not support wrapping `agy` in another application on consumer
+  plans (owner, 2026-11-28).
 - **The model is reached as before** through the Runtime; a self-hosted model may replace it later, since NicheGraph
   only summarises and analyses, with no question answering (owner, 2026-11-28).
 
