@@ -48,6 +48,8 @@
   and is left out when a change touches several; `summary` is English, starts in lower case, says what the change
   makes, and stays within 72 characters. A design that spans several pull requests is one issue, and each pull
   request has its own issue marked "Part of #<design issue>".
+- Any change to the interface or how it is used is drawn in Figma first, with the components already in the Figma
+  file; the app keeps that one set of components (owner, 2026-11-28).
 - Docs-only changes (`docs/`, `AGENTS.md`, `README.md`) go straight to `main` with the subject `docs: summary`, after
   the owner has read them.
 - Commits carry the owner's name only: no co-author or "generated with" lines.

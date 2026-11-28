@@ -96,6 +96,7 @@ Agreed on 28 November 2026, adding to the shape above:
   machine, as Zalo keeps messages on the device, so that hosting costs little; a hosted server keeps only accounts,
   their sign-in data and what is needed to share. The core stays open source, so anyone can run all of it on their
   own machine or server and keep their own data (owner, 2026-11-28).
+- **On a computer and on a phone,** each keeping its own data, as Zalo keeps messages on both (owner, 2026-11-28).
 - **A shared topic is an encrypted snapshot,** as Excalidraw's share links are (`exportToBackend`,
   `excalidraw-app/data/index.ts`): the person's machine encrypts the topic's graph and uploads it, the hosted server
   keeps bytes it cannot read, and the key travels in the link's `#` part, which browsers never send to a server. A
@@ -119,3 +120,5 @@ Each is decided with the owner, one at a time, and recorded in an issue.
    ([research](research/2026-11-28-reddit-access.md)).
 2. How a topic is shared with a friend without sending a link: each account would need a key pair so that a topic's
    key can be encrypted for each friend (any-sync's access lists do this; not yet read in code).
+3. What a phone does: the agent CLIs (Claude Code, Codex) do not run on a phone, so a phone either runs Runs through
+   an API key or shows topics carried over from the person's computer.
